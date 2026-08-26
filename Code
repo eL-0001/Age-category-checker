@@ -1,0 +1,46 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine ("Age Category Checker");
+			Console.WriteLine ();
+		while (true)
+		{
+			Console.Write ("Enter Name:");
+			string name = Console.ReadLine();
+			Console.WriteLine ();
+			Console.Write ("Enter your age: ");
+			string input = Console.ReadLine ();
+			
+			if (!int.TryParse(input, out int age))
+			{
+				Console.WriteLine ("Please input valid age in numbers");
+				continue;
+			}
+			else if (age < 0)
+			{
+				Console.WriteLine("Age cannot be negative. Try again");
+				continue;
+			}
+			else if (age <= 12)
+			{
+				Console.WriteLine ($"{name} is a Child");
+			}
+			else if (age <= 17)
+			{
+				Console.WriteLine ($"{name} is a Teenager");
+			}
+			else if (age <= 64)
+			{
+				Console.WriteLine ($"{name} is an Adult");
+			}
+			else
+			{
+				Console.WriteLine ($"{name} is a Senior");
+			}
+			break;
+		}
+	}
+}
